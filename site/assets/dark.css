@@ -513,3 +513,14 @@
 .gc-front { position: relative; box-shadow: 0 34px 70px rgba(0,0,0,.6); }
 .gc-stack { padding: 0; }
 .gc-front { box-shadow: 0 0 0 2px var(--pink), 0 34px 70px rgba(0,0,0,.6) !important; }
+
+/* Search box: dark text on the white search panel (fix: typed text was white on white) */
+.theme-dark .search-box { color: #332C2B; border-color: rgba(255,255,255,.2); box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.theme-dark #siteSearch { --pagefind-ui-text: #332C2B; --pagefind-ui-background: #ffffff; --pagefind-ui-border: #cdbfd2; --pagefind-ui-tag: #f4e9f6; color: #332C2B; }
+.theme-dark #siteSearch input, .theme-dark #siteSearch .pagefind-ui__search-input { color: #332C2B !important; background: #fff !important; caret-color: #DE0B83; }
+.theme-dark #siteSearch input::placeholder { color: #8a7d8c !important; opacity: 1; }
+.theme-dark #siteSearch .pagefind-ui__result-link, .theme-dark #siteSearch .pagefind-ui__result-title { color: #332C2B !important; }
+.theme-dark #siteSearch .pagefind-ui__result-link:hover { color: #c0096f !important; }
+.theme-dark #siteSearch .pagefind-ui__result-excerpt, .theme-dark #siteSearch .pagefind-ui__message { color: #5c5160 !important; }
+.theme-dark #siteSearch .pagefind-ui__search-clear { color: #332C2B; background: transparent; }
+.theme-dark #siteSearch mark { color: #332C2B; }
