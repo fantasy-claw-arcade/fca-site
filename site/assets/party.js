@@ -1,6 +1,6 @@
 /* Birthday packages: pick a location, then show that location's packages.
    Booking links: paste each store's Square Appointments booking URL per package.
-   Party Room stores (food optional) also take a "-games" link per package, e.g. "sorcerer-games".
+   Party Area stores (food optional) also take a "-games" link per package, e.g. "sorcerer-games".
    Empty links fall back to the party request form (#eventsForm). */
 (function () {
   var BOOKING = {
@@ -55,14 +55,14 @@
     root.classList.add("ploc-picked");
     sets.forEach(function (s) { s.inert = false; });
     sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== type; });
-    status.textContent = "Showing packages for " + name + " · " + (type === "room" ? "Party Room with tables and seating · pizza and drinks optional" : "Arcade Party, all about the games");
+    status.textContent = "Showing packages for " + name + " · " + (type === "room" ? "Party Area with tables and seating · pizza and drinks optional" : "Arcade Party, all about the games");
     current = { id: id, type: type };
     applyLinks();
     if (remember) { try { localStorage.setItem("fcaPartyLoc", id); } catch (e) {} }
     return true;
   }
 
-  // Before a pick: show the Party Room set dimmed as a preview.
+  // Before a pick: show the Party Area set dimmed as a preview.
   sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== "room"; s.inert = true; });
   radios.forEach(function (r) { r.addEventListener("change", function () {
     choose(r.value, true);
