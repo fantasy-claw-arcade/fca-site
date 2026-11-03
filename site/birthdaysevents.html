@@ -66,26 +66,33 @@
       <p class="ploc-status" id="plocStatus" aria-live="polite"><span class="ploc-step">2</span><span data-status>Pick your arcade to see its packages.</span></p>
       <div class="pkg-set" data-set="room">
         <h3 class="pkg-set-title">Party Room <span>Fashion Show Mall and AREA15 · tables, seating, pizza and drinks (or skip the food and save)</span></h3>
+        <div class="pfood" role="radiogroup" aria-labelledby="pfoodLabel">
+          <p class="pfood-label" id="pfoodLabel"><span class="ploc-step">3</span>Food or games only?</p>
+          <div class="pfood-opts">
+            <label class="pfood-opt"><input type="radio" name="partyFood" value="food" checked><span>With pizza and drinks</span></label>
+            <label class="pfood-opt"><input type="radio" name="partyFood" value="games"><span>Games only <small>Save $125–$175</small></span></label>
+          </div>
+        </div>
         <div class="pkgs">
         <article class="pkg" data-pkg="apprentice">
           <h3>Apprentice</h3>
-          <p class="pkg-price"><span>$450</span></p>
+          <p class="pkg-price"><span data-food="$450" data-games="$325">$450</span></p>
           <p class="pkg-kids">Up to 10 kids</p>
-          <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2-hour party with a Party Host</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pizza and drinks <span class="pkg-save">Skip them and save $125</span></span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tables and seating</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tokens for every kid</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10% off in-store purchases</li></ul>
+          <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2-hour party with a Party Host</li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pizza and drinks <span class="pkg-save">Skip them and save $125</span></span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tables and seating</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tokens for every kid</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10% off in-store purchases</li></ul>
           <a class="btn ghost" href="#eventsForm" data-book>Book this package</a>
         </article>
         <article class="pkg pkg-feat" data-pkg="sorcerer">
           <h3>Sorcerer</h3>
-          <p class="pkg-price"><span>$600</span></p>
+          <p class="pkg-price"><span data-food="$600" data-games="$450">$600</span></p>
           <p class="pkg-kids">Up to 15 kids</p>
-          <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2-hour party with a Party Host</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pizza and drinks <span class="pkg-save">Skip them and save $150</span></span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tables and seating</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tokens for every kid</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10% off in-store purchases</li></ul>
+          <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2-hour party with a Party Host</li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pizza and drinks <span class="pkg-save">Skip them and save $150</span></span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tables and seating</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tokens for every kid</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10% off in-store purchases</li></ul>
           <a class="btn" href="#eventsForm" data-book>Book this package</a>
         </article>
         <article class="pkg" data-pkg="grand-wizard">
           <h3>Grand Wizard</h3>
-          <p class="pkg-price"><span>$750</span></p>
+          <p class="pkg-price"><span data-food="$750" data-games="$575">$750</span></p>
           <p class="pkg-kids">Up to 20 kids</p>
-          <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2-hour party with a Party Host</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pizza and drinks <span class="pkg-save">Skip them and save $175</span></span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tables and seating</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tokens for every kid</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10% off in-store purchases</li></ul>
+          <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2-hour party with a Party Host</li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Pizza and drinks <span class="pkg-save">Skip them and save $175</span></span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tables and seating</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tokens for every kid</li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>10% off in-store purchases</li></ul>
           <a class="btn ghost" href="#eventsForm" data-book>Book this package</a>
         </article>
         <article class="pkg pkg-custom" data-pkg="custom">
