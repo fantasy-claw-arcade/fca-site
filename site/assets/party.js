@@ -26,7 +26,7 @@
     root.classList.add("ploc-picked");
     sets.forEach(function (s) { s.inert = false; });
     sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== type; });
-    status.textContent = "Showing packages for " + name + " · " + (type === "room" ? "Party Room with tables, seating, pizza and drinks" : "Arcade Party, all about the games");
+    status.textContent = "Showing packages for " + name + " · " + (type === "room" ? "Party Room with tables and seating · pizza and drinks optional" : "Arcade Party, all about the games");
     var links = BOOKING[id] || {};
     root.querySelectorAll('.pkg-set[data-set="' + type + '"] [data-pkg]').forEach(function (card) {
       var a = card.querySelector("[data-book]"); if (!a) return;
