@@ -75,6 +75,10 @@
       var lastFocus = null;
       var openForm = function (e) {
         if (e) e.preventDefault();
+        // Load the HubSpot form script the first time the drawer opens (pages other than Franchising)
+        if (!document.querySelector('script[src*="hsforms.net/forms/embed"]')) {
+          var hs = document.createElement("script"); hs.src = "https://js-na2.hsforms.net/forms/embed/245740388.js"; hs.defer = true; document.body.appendChild(hs);
+        }
         lastFocus = document.activeElement;
         drawer.setAttribute("aria-hidden", "false"); overlay.hidden = false;
         requestAnimationFrame(function () { document.body.classList.add("drawer-open"); });

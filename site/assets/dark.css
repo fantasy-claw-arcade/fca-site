@@ -524,3 +524,8 @@
 .theme-dark #siteSearch .pagefind-ui__result-excerpt, .theme-dark #siteSearch .pagefind-ui__message { color: #5c5160 !important; }
 .theme-dark #siteSearch .pagefind-ui__search-clear { color: #332C2B; background: transparent; }
 .theme-dark #siteSearch mark { color: #332C2B; }
+/* Franchise drawer: short summary + overview link (all pages) */
+.drawer-points { list-style: none; margin: 4px 0 18px; padding: 14px 16px; display: grid; gap: 8px; border-radius: 14px; background: #f7f0f8; }
+.drawer-points li { position: relative; padding-left: 26px; color: #332C2B; font-weight: 600; font-size: .95rem; line-height: 1.4; }
+.drawer-points li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 14px; height: 8px; border-left: 3px solid #DE0B83; border-bottom: 3px solid #DE0B83; transform: rotate(-45deg); }
+.drawer-more { margin: 14px 0 0; } .drawer-more a { color: #c0096f; font-weight: 700; text-decoration: none; } .drawer-more a:hover { text-decoration: underline; }
