@@ -580,3 +580,24 @@
   .pfood-opt span { justify-content: center; flex-direction: column; align-items: center; gap: 2px; padding: 9px 8px; font-size: .88rem; white-space: normal; text-align: center; }
 }
 @media (max-width: 620px) { .pfood-opt { display: flex; } .pfood-opt span { flex: 1; justify-content: center; } }
+/* Collaborations page */
+.collabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 28px; }
+.collab { display: flex; flex-direction: column; background: var(--surface-2); border: 1px solid rgba(255,255,255,.1); border-radius: 22px; overflow: hidden; min-width: 0; }
+.collab-media { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: #1b0d22; }
+.collab-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.collab:hover .collab-media img { transform: scale(1.03); }
+.collab-body { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.collab-tag { margin: 0; font: 800 .75rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--pink-ink); }
+.collab-body h3 { margin: 0; font-size: 1.45rem; color: #fff; }
+.collab-body p { margin: 0; color: var(--muted); }
+.collab-link { margin-top: auto; padding-top: 8px; font-weight: 800; color: #fff; text-decoration: none; }
+.collab-link:hover { color: var(--pink-ink); }
+.collab-ideas { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.collab-ideas li { padding: 24px 22px; border-radius: 18px; background: var(--surface-2); border: 1px solid rgba(255,255,255,.1); }
+.ci-num { display: block; font: 900 1.6rem/1 var(--display); color: var(--pink-ink); margin-bottom: 14px; }
+.collab-ideas h3 { margin: 0 0 6px; font-size: 1.15rem; color: #fff; }
+.collab-ideas p { margin: 0; color: var(--muted); font-size: .95rem; }
+.form-placeholder { border: 2px dashed #d9c8de; border-radius: 14px; padding: 28px 20px; text-align: center; color: #5b4f5e; }
+.form-placeholder p { margin: 4px 0; }
+@media (max-width: 980px) { .collab-ideas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .collabs, .collab-ideas { grid-template-columns: 1fr; } }
