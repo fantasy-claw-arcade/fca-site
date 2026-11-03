@@ -529,3 +529,5 @@
 .drawer-points li { position: relative; padding-left: 26px; color: #332C2B; font-weight: 600; font-size: .95rem; line-height: 1.4; }
 .drawer-points li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 14px; height: 8px; border-left: 3px solid #DE0B83; border-bottom: 3px solid #DE0B83; transform: rotate(-45deg); }
 .drawer-more { margin: 14px 0 0; } .drawer-more a { color: #c0096f; font-weight: 700; text-decoration: none; } .drawer-more a:hover { text-decoration: underline; }
+.drawer-highlight { margin: 4px 0 18px; padding: 14px 16px 14px 44px; position: relative; border-radius: 14px; background: #f7f0f8; color: #332C2B; font-weight: 700; font-size: .98rem; line-height: 1.45; }
+.drawer-highlight::before { content: ""; position: absolute; left: 18px; top: 1.15em; width: 14px; height: 8px; border-left: 3px solid #DE0B83; border-bottom: 3px solid #DE0B83; transform: rotate(-45deg); }
