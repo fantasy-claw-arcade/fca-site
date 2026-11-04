@@ -44,6 +44,7 @@
   var radios = root.querySelectorAll('input[name="partyLoc"]');
   var sets = root.querySelectorAll(".pkg-set");
   var status = root.querySelector("[data-status]");
+  var sub = root.querySelector("[data-status-sub]");
   root.classList.add("ploc-on");
 
   function choose(id, remember) {
@@ -55,7 +56,10 @@
     root.classList.add("ploc-picked");
     sets.forEach(function (s) { s.inert = false; });
     sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== type; });
-    status.textContent = "Showing packages for " + name + " · " + (type === "room" ? "Party Area with tables and seating · pizza and drinks optional" : "Arcade Party, all about the games");
+    root.classList.toggle("ploc-room", type === "room");
+    root.querySelector("[data-step]").textContent = type === "room" ? "3" : "2";
+    status.textContent = "Choose your package";
+    sub.textContent = name + " · " + (type === "room" ? "Party Area with tables and seating" : "Arcade Party, all about the games");
     current = { id: id, type: type };
     applyLinks();
     if (remember) { try { localStorage.setItem("fcaPartyLoc", id); } catch (e) {} }
@@ -66,7 +70,7 @@
   sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== "room"; s.inert = true; });
   radios.forEach(function (r) { r.addEventListener("change", function () {
     choose(r.value, true);
-    if (window.innerWidth < 760) document.getElementById("plocStatus").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    if (window.innerWidth < 760) (r.getAttribute("data-type") === "room" ? root.querySelector(".pfood") : document.getElementById("plocStatus")).scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   }); });
 
   applyFood();

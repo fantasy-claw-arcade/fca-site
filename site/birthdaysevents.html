@@ -63,16 +63,16 @@
         <div class="ploc-city"><p class="ploc-cityname">Honolulu</p><div class="ploc-chips"><label class="ploc-chip"><input type="radio" name="partyLoc" value="international-market-place" data-type="arcade"><span>International Market Place<small>Arcade Party</small></span></label><label class="ploc-chip"><input type="radio" name="partyLoc" value="ala-moana" data-type="arcade" disabled><span>Ala Moana Center<small>Opening December</small></span></label></div></div>
         <div class="ploc-city"><p class="ploc-cityname">Columbus</p><div class="ploc-chips"><label class="ploc-chip"><input type="radio" name="partyLoc" value="easton" data-type="arcade"><span>Easton Town Center<small>Arcade Party</small></span></label></div></div>
       </fieldset>
-      <p class="ploc-status" id="plocStatus" aria-live="polite"><span class="ploc-step">2</span><span data-status>Pick your arcade to see its packages.</span></p>
+      <div class="pfood" role="radiogroup" aria-labelledby="pfoodLabel">
+        <p class="pfood-label" id="pfoodLabel"><span class="ploc-step">2</span>Food or games only?</p>
+        <div class="pfood-opts">
+          <label class="pfood-opt"><input type="radio" name="partyFood" value="food" checked><span>With pizza and drinks</span></label>
+          <label class="pfood-opt"><input type="radio" name="partyFood" value="games"><span>Games only <small>Save $125–$175</small></span></label>
+        </div>
+      </div>
+      <div class="ploc-status" id="plocStatus" aria-live="polite"><span class="ploc-step" data-step>2</span><p><span data-status>Pick your arcade to see its packages.</span><small data-status-sub></small></p></div>
       <div class="pkg-set" data-set="room">
         <h3 class="pkg-set-title">Party Area <span>Fashion Show Mall and AREA15 · tables, seating, pizza and drinks (or skip the food and save)</span></h3>
-        <div class="pfood" role="radiogroup" aria-labelledby="pfoodLabel">
-          <p class="pfood-label" id="pfoodLabel"><span class="ploc-step">3</span>Food or games only?</p>
-          <div class="pfood-opts">
-            <label class="pfood-opt"><input type="radio" name="partyFood" value="food" checked><span>With pizza and drinks</span></label>
-            <label class="pfood-opt"><input type="radio" name="partyFood" value="games"><span>Games only <small>Save $125–$175</small></span></label>
-          </div>
-        </div>
         <div class="pkgs">
         <article class="pkg" data-pkg="apprentice">
           <h3>Apprentice</h3>
