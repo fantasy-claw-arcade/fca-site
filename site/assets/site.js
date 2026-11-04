@@ -202,3 +202,16 @@
     }
   } catch (e) {}
 })();
+
+/* Employment: remember which job's Apply was clicked and remind the applicant above the form */
+(function () {
+  var pick = document.querySelector("[data-apply-pick]");
+  if (!pick) return;
+  document.querySelectorAll("[data-apply-job]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      pick.innerHTML = "You’re applying for <b></b>. Choose it in the Position and Location fields.";
+      pick.querySelector("b").textContent = a.getAttribute("data-apply-job") + " · " + a.getAttribute("data-apply-loc");
+      pick.hidden = false;
+    });
+  });
+})();

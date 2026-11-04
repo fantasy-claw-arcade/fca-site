@@ -655,3 +655,9 @@
 /* Franchise form: keep HubSpot's frame inside the rounded card (it was 4px wider than the card) */
 #anchor1 .hs-form-frame { margin-inline: -12px; }
 .theme-dark .formcard { overflow: hidden; }
+/* Employment application */
+#apply { scroll-margin-top: 90px; }
+#applyForm .hs-form-frame { width: auto; min-width: 0; margin-inline: -16px; }
+.apply-copy { align-self: start; }
+.apply-pick { margin-top: 18px; padding: 14px 16px; border-radius: 14px; background: rgba(222,11,131,.16); border: 1px solid rgba(222,11,131,.5); color: #fff; }
+#apply .two-col { align-items: center; } #apply .apply-copy { align-self: center; }
