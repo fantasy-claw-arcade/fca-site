@@ -618,3 +618,14 @@
 .collab-video .collab-tt .play { top: 50%; left: 50%; }
 @media (max-width: 720px) { .collab-media { aspect-ratio: 1 / 1; } .collab-video { aspect-ratio: 4 / 5; } }
 .collab-video .collab-tt, .collab-video .social-frame { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; aspect-ratio: 9 / 16; max-width: 100%; }
+/* Collaborations: pitch guidance column */
+.pitch-copy { align-self: start; }
+@media (min-width: 900px) { .pitch-copy { position: sticky; top: 110px; } }
+.pitch-sub { margin: 30px 0 14px; font-size: 1.2rem; color: #fff; }
+.pitch-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.pitch-steps li { display: flex; gap: 14px; align-items: flex-start; color: #fff; }
+.pitch-steps .ploc-step { margin-top: 1px; }
+.pitch-steps b { color: #fff; }
+.pitch-tips { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.pitch-tips li { display: flex; gap: 10px; align-items: flex-start; color: #fff; }
+.pitch-tips svg { flex: none; width: 20px; height: 20px; fill: none; stroke: var(--pink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; margin-top: 2px; }
