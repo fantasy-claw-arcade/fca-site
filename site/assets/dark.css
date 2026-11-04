@@ -652,3 +652,6 @@
 @media (max-width: 640px) { .cookie-banner { flex-direction: column; align-items: stretch; } .cookie-actions .btn { flex: 1; } }
 .link-btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
 .theme-dark .footer-legal .link-btn { color: #fff; }
+/* Franchise form: keep HubSpot's frame inside the rounded card (it was 4px wider than the card) */
+#anchor1 .hs-form-frame { margin-inline: -12px; }
+.theme-dark .formcard { overflow: hidden; }
