@@ -638,3 +638,7 @@
 .promo-details ul { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 6px; color: #fff; font-size: .93rem; }
 .promo-details p { margin: 12px 0 0; }
 .promo-details a { color: #fff; font-weight: 700; }
+/* Pitch section: center the guidance against the form instead of pinning it to the top */
+#pitch .two-col { align-items: center; }
+#pitch .pitch-copy { align-self: center; position: static; }
+#pitchForm { padding-top: 28px; }
