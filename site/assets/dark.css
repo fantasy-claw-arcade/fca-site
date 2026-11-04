@@ -661,3 +661,14 @@
 .apply-copy { align-self: start; }
 .apply-pick { margin-top: 18px; padding: 14px 16px; border-radius: 14px; background: rgba(222,11,131,.16); border: 1px solid rgba(222,11,131,.5); color: #fff; }
 #apply .two-col { align-items: center; } #apply .apply-copy { align-self: center; }
+/* Employment: job list beside the application form */
+.jobs-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+@media (min-width: 900px) { .jobs-col { position: sticky; top: 100px; } }
+.apply-col h2 { margin: 0 0 10px; }
+.apply-col > p { color: #fff; margin: 0 0 16px; }
+.apply-col .apply-pick { margin: 0 0 16px; }
+@media (max-width: 899px) { .jobs-layout { grid-template-columns: 1fr; gap: 40px; } }
+.jobs-layout .jobs li { flex-wrap: nowrap; padding: 14px 16px; }
+.jobs-layout .jobs li div { flex: 1; }
+.jobs-layout .jobs .btn { flex: none; }
+.jobs-layout .jobs-col .section-head h2, .apply-col h2 { font-size: clamp(2rem, 3.4vw, 2.8rem); }
