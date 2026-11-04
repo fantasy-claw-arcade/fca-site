@@ -642,3 +642,13 @@
 #pitch .two-col { align-items: center; }
 #pitch .pitch-copy { align-self: center; position: static; }
 #pitchForm { padding-top: 28px; }
+/* Cookie consent banner */
+.cookie-banner { position: fixed; z-index: 39; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); width: min(760px, calc(100vw - 32px)); display: flex; gap: 16px 24px; align-items: center; padding: 18px 20px; border-radius: 18px; background: #221329; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 20px 50px rgba(0,0,0,.55); color: #fff; }
+.cookie-banner[hidden] { display: none; }
+.cookie-banner p { margin: 0; font-size: .92rem; line-height: 1.5; color: #fff; }
+.cookie-banner a { color: #fff; text-decoration: underline; }
+.cookie-actions { display: flex; gap: 10px; flex: none; }
+.cookie-actions .btn { min-width: 108px; justify-content: center; padding: 12px 18px; font-size: .85rem; }
+@media (max-width: 640px) { .cookie-banner { flex-direction: column; align-items: stretch; } .cookie-actions .btn { flex: 1; } }
+.link-btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
+.theme-dark .footer-legal .link-btn { color: #fff; }

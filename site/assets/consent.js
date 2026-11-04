@@ -1,0 +1,60 @@
+/* Cookie consent: Accept or Reject non-essential (analytics/marketing) cookies.
+   Nothing non-essential loads until a visitor accepts. Global Privacy Control is honored as Reject.
+   To turn on tracking at launch, fill in the IDs below (public IDs, safe to commit). */
+(function () {
+  var TRACKING = {
+    ga4: "",            // Google Analytics 4 measurement ID, e.g. "G-XXXXXXX"
+    hubspot: ""         // HubSpot tracking: "245740388" (loads js-na2.hs-scripts.com/245740388.js)
+  };
+  var KEY = "fcaCookieConsent";
+
+  function read() { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { return null; } }
+  function save(v) { try { localStorage.setItem(KEY, JSON.stringify({ choice: v, date: new Date().toISOString() })); } catch (e) {} }
+
+  var loaded = false;
+  function loadTracking() {
+    if (loaded) return; loaded = true;
+    if (TRACKING.ga4) {
+      var g = document.createElement("script"); g.async = true;
+      g.src = "https://www.googletagmanager.com/gtag/js?id=" + TRACKING.ga4; document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date()); window.gtag("config", TRACKING.ga4);
+    }
+    if (TRACKING.hubspot) {
+      var h = document.createElement("script"); h.async = true; h.defer = true; h.id = "hs-script-loader";
+      h.src = "https://js-na2.hs-scripts.com/" + TRACKING.hubspot + ".js"; document.body.appendChild(h);
+    }
+  }
+
+  var banner;
+  function build() {
+    banner = document.createElement("div");
+    banner.className = "cookie-banner"; banner.setAttribute("role", "region"); banner.setAttribute("aria-label", "Cookie choices");
+    banner.innerHTML =
+      '<p><b>Cookies on our site.</b> We use cookies to see how people use our site and to improve it. ' +
+      'Accept to allow analytics cookies, or Reject to keep only the cookies the site needs to work. ' +
+      'See our <a href="/privacy-policy">Privacy Policy</a>.</p>' +
+      '<div class="cookie-actions"><button type="button" class="btn ghost" data-cookie="reject">Reject</button>' +
+      '<button type="button" class="btn ghost" data-cookie="accept">Accept</button></div>';
+    banner.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-cookie]"); if (!b) return;
+      var v = b.getAttribute("data-cookie"); save(v === "accept" ? "accepted" : "rejected");
+      hide(); if (v === "accept") loadTracking(); else if (loaded) location.reload();
+    });
+    document.body.appendChild(banner);
+  }
+  function show() { if (!banner) build(); banner.hidden = false; document.documentElement.classList.add("cookie-open"); }
+  function hide() { if (banner) banner.hidden = true; document.documentElement.classList.remove("cookie-open"); }
+
+  function init() {
+    document.querySelectorAll("[data-cookie-settings]").forEach(function (b) {
+      b.addEventListener("click", function () { show(); var f = banner.querySelector("button"); if (f) f.focus(); });
+    });
+    var c = read();
+    if (navigator.globalPrivacyControl === true && !c) { save("rejected"); return; }
+    if (!c) { show(); return; }
+    if (c.choice === "accepted") loadTracking();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
