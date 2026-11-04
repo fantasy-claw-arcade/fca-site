@@ -207,11 +207,12 @@
 (function () {
   var pick = document.querySelector("[data-apply-pick]");
   if (!pick) return;
-  document.querySelectorAll("[data-apply-job]").forEach(function (a) {
-    a.addEventListener("click", function () {
-      pick.innerHTML = "You’re applying for <b></b>. Choose it in the Position and Location fields.";
-      pick.querySelector("b").textContent = a.getAttribute("data-apply-job") + " · " + a.getAttribute("data-apply-loc");
-      pick.hidden = false;
-    });
-  });
+  // Apply links reload the page with ?job_position_applied=…&fca_arcade_location=… so HubSpot can pre-fill the form.
+  var q = new URLSearchParams(location.search);
+  var job = q.get("job_position_applied"), loc = q.get("fca_arcade_location");
+  if (job && loc) {
+    pick.innerHTML = "You’re applying for <b></b>. Check that Position and Location match.";
+    pick.querySelector("b").textContent = job + " · " + loc;
+    pick.hidden = false;
+  }
 })();
