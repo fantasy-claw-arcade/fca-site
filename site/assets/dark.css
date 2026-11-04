@@ -609,3 +609,12 @@
 .ploc-status small:empty { display: none; }
 .ploc-on .ploc-status { align-items: flex-start; }
 .ploc-status .ploc-step { margin-top: -2px; }
+/* Collaborations: taller media so the vertical TikTok plays at a usable size */
+.collab-media { aspect-ratio: 4 / 5; }
+.collab-video { position: relative; display: grid; place-items: center; }
+.collab-blur { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(26px) brightness(.45); transform: scale(1.2); }
+.collab:hover .collab-video .collab-blur { transform: scale(1.2); }
+.collab-video .collab-tt, .collab-video .social-frame { position: relative; height: 100%; width: auto; aspect-ratio: 9 / 16; border: 0; border-radius: 0; box-shadow: none; }
+.collab-video .collab-tt .play { top: 50%; left: 50%; }
+@media (max-width: 720px) { .collab-media { aspect-ratio: 1 / 1; } .collab-video { aspect-ratio: 4 / 5; } }
+.collab-video .collab-tt, .collab-video .social-frame { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; width: auto; aspect-ratio: 9 / 16; max-width: 100%; }
