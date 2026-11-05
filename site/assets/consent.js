@@ -3,7 +3,7 @@
    To turn on tracking at launch, fill in the IDs below (public IDs, safe to commit). */
 (function () {
   var TRACKING = {
-    ga4: "",            // Google Analytics 4 measurement ID, e.g. "G-XXXXXXX"
+    ga4: "G-DDHMTRKQR1", // Google Analytics 4 measurement ID (existing property, also used by the Wix site)
     hubspot: "245740388" // HubSpot tracking (loads js-na2.hs-scripts.com/245740388.js)
   };
   // Track only on the live site (or a preview with ?fca_track_test=1 once, for testing).
