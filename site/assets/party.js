@@ -51,7 +51,7 @@
     step.textContent = needsFood ? "3" : "2";
     if (!ready) { status.textContent = "Choose a food option to see packages."; sub.textContent = ""; return; }
     status.textContent = "Choose your package";
-    sub.textContent = storeName(id) + (needsFood ? (f === "food" ? " · with pizza and drinks" : (id === "fashion-show" ? " · no food from us" : " · games only")) : (id === "area15" ? " · games only (no outside food or drink)" : " · all about the games"));
+    sub.textContent = storeName(id) + (needsFood ? (f === "food" ? " · with pizza and drinks" : (id === "fashion-show" ? " · no food from us" : " · games only")) : (id === "area15" ? " · games only (no outside food or drink)" : (id === "miracle-mile" ? " · games only" : " · all about the games")));
 
     root.querySelectorAll('.pkg-set[data-set="lv"] [data-base]').forEach(function (p) {
       p.textContent = needsFood && f === "food" ? p.getAttribute("data-withfood") : p.getAttribute("data-base");
