@@ -672,3 +672,23 @@
 .jobs-layout .jobs li div { flex: 1; }
 .jobs-layout .jobs .btn { flex: none; }
 .jobs-layout .jobs-col .section-head h2, .apply-col h2 { font-size: clamp(2rem, 3.4vw, 2.8rem); }
+/* Employment list (single column) and job pages */
+.jobs-single .jobs { max-width: 860px; }
+.jobs-single .jobs li { flex-wrap: nowrap; }
+.jobs-single .jobs li div { flex: 1; }
+.jobs-single .jobs .btn { flex: none; }
+.job-back { margin: 0 0 14px; } .job-back a { color: #fff; font-weight: 700; text-decoration: none; } .job-back a:hover { color: var(--pink-ink); }
+.job-hero h1 { max-width: 20ch; }
+.job-facts { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 22px 0 24px; }
+.job-facts div { display: grid; gap: 2px; }
+.job-facts dt { font: 800 .72rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--pink-ink); }
+.job-facts dd { margin: 0; color: #fff; font-weight: 600; }
+.job-note { display: inline-block; margin: 0 0 20px; padding: 8px 14px; border-radius: 999px; background: rgba(253,209,0,.15); color: #FDD100; font-weight: 700; }
+.job-desc { max-width: 760px; }
+.job-desc h2 { font-size: 1.4rem; margin: 30px 0 12px; } .job-desc h2:first-child { margin-top: 0; }
+.job-desc p, .job-desc li { color: #fff; }
+.job-desc ul { padding-left: 20px; display: grid; gap: 8px; margin: 0; }
+.job-apply { max-width: 760px; }
+.job-apply > p { color: #fff; margin: 10px 0 22px; }
+#applyForm .hs-form-frame { width: auto; min-width: 0; margin-inline: -16px; }
+.job-desc > p:last-child { margin-top: 22px; }
