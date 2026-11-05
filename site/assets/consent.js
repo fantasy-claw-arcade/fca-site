@@ -32,9 +32,10 @@
     banner = document.createElement("div");
     banner.className = "cookie-banner"; banner.setAttribute("role", "region"); banner.setAttribute("aria-label", "Cookie choices");
     banner.innerHTML =
-      '<p><b>Cookies on our site.</b> We use cookies to see how people use our site and to improve it. ' +
-      'Accept to allow analytics cookies, or Reject to keep only the cookies the site needs to work. ' +
-      'See our <a href="/privacy-policy">Privacy Policy</a>.</p>' +
+      '<p><b>Cookies on our site.</b> We use essential cookies to keep the site working. With your OK, we also use ' +
+      'analytics and marketing cookies, including Google Analytics and HubSpot, to see how people use the site and ' +
+      'measure our marketing and advertising. Accept to allow them, or Reject to keep essential cookies only. ' +
+      'You can change your choice anytime under Cookie settings. See our <a href="/privacy-policy">Privacy Policy</a>.</p>' +
       '<div class="cookie-actions"><button type="button" class="btn ghost" data-cookie="reject">Reject</button>' +
       '<button type="button" class="btn ghost" data-cookie="accept">Accept</button></div>';
     banner.addEventListener("click", function (e) {
