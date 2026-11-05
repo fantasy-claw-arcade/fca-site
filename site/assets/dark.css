@@ -712,3 +712,23 @@
   .jobs-table td.jt-act { margin-top: 12px; }
 }
 @media (max-width: 720px) { .jobs-table td.jt-act, .jobs-table tbody th { border: 0; } }
+/* Birthdays v3: packages hidden until location (+ food at Las Vegas) are chosen */
+.ploc-on .pkg-set[hidden] { display: none !important; }
+#packages .pfood { border: 0; padding: 0; margin: 30px 0 0; }
+#packages .pfood[hidden] { display: none !important; }
+.ploc-on.ploc-picked .pfood, .ploc-on .pfood { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+#packages .pfood legend { float: left; margin-right: 8px; }
+.pfood-note { flex-basis: 100%; margin: 4px 0 0; color: #fff; font-size: .9rem; }
+.pfood-note[hidden] { display: none; }
+.ploc-on .pkg-set { margin-top: 0; }
+.ploc-on .pkg-set .pkgs { opacity: 1 !important; filter: none !important; pointer-events: auto !important; }
+.pkg-addon { display: none; margin: -2px 0 6px; font-size: .82rem; font-weight: 700; color: #FDD100; }
+.pfood-yes .pkg-addon { display: block; }
+.ploc-on .pkg-food { display: none !important; }
+.ploc-on.pfood-yes .pkg-food { display: flex !important; }
+.pkg-plus { font-weight: 800; }
+.pkg-plus svg { visibility: hidden; }
+#packages .pkgs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) { #packages .pkgs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { #packages .pkgs { grid-template-columns: 1fr; } }
+@media (min-width: 1101px) { #packages .pkg h3 { min-height: 2.5em; } }

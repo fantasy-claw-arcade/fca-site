@@ -1,80 +1,89 @@
-/* Birthday packages: pick a location, then show that location's packages.
+/* Birthday packages: pick a location (and, at Las Vegas stores, a food option) before any packages show.
    Booking links: paste each store's Square Appointments booking URL per package.
-   Party Area stores (food optional) also take a "-games" link per package, e.g. "sorcerer-games".
-   Empty links fall back to the party request form (#eventsForm). */
+   Las Vegas stores take two links per package: games only ("fantasy-claw") and with food ("fantasy-claw-food").
+   Empty links fall back to the party request form (#eventsForm). Custom always goes to the form. */
 (function () {
+  var LV = { "fantasy-claw": "", "wizards-challenge": "", "ultimate-wizard": "",
+             "fantasy-claw-food": "", "wizards-challenge-food": "", "ultimate-wizard-food": "" };
+  var AR = { "fantasy-claw": "", "wizards-challenge": "", "ultimate-wizard": "" };
   var BOOKING = {
-    "fashion-show": { apprentice: "", sorcerer: "", "grand-wizard": "",
-                      "apprentice-games": "", "sorcerer-games": "", "grand-wizard-games": "" },
-    "area15":       { apprentice: "", sorcerer: "", "grand-wizard": "",
-                      "apprentice-games": "", "sorcerer-games": "", "grand-wizard-games": "" },
-    "miracle-mile":               { apprentice: "", sorcerer: "", "grand-wizard": "" },
-    "international-market-place": { apprentice: "", sorcerer: "", "grand-wizard": "" },
-    "ala-moana":                  { apprentice: "", sorcerer: "", "grand-wizard": "" },
-    "easton":                     { apprentice: "", sorcerer: "", "grand-wizard": "" }
+    "fashion-show": Object.assign({}, LV),
+    "area15": Object.assign({}, LV),
+    "miracle-mile": Object.assign({}, LV),
+    "international-market-place": Object.assign({}, AR),
+    "ala-moana": Object.assign({}, AR),
+    "easton": Object.assign({}, AR)
   };
+
   var root = document.getElementById("packages");
   if (!root) return;
-  var current = null;
+  var sets = root.querySelectorAll(".pkg-set");
+  var food = root.querySelector(".pfood");
+  var byo = root.querySelector("[data-byo]");
+  var status = root.querySelector("[data-status]");
+  var sub = root.querySelector("[data-status-sub]");
+  var step = root.querySelector("[data-step]");
+  var loc = null;
+  root.classList.add("ploc-on");
 
-  function games() {
-    var g = root.querySelector('input[name="partyFood"]:checked');
-    return !!g && g.value === "games";
+  function picked(name) { var r = root.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : null; }
+  function storeName(id) {
+    var i = root.querySelector('input[name="partyLoc"][value="' + id + '"]');
+    return i ? i.parentNode.querySelector("span").firstChild.textContent.trim() : "";
   }
-  function applyLinks() {
-    if (!current) return;
-    var links = BOOKING[current.id] || {};
-    var suffix = current.type === "room" && games() ? "-games" : "";
-    root.querySelectorAll('.pkg-set[data-set="' + current.type + '"] [data-pkg]').forEach(function (card) {
+
+  function render(scroll) {
+    var id = picked("partyLoc");
+    var input = id && root.querySelector('input[name="partyLoc"][value="' + id + '"]');
+    var type = input ? input.getAttribute("data-type") : null;
+    var f = picked("partyFood");
+    var needsFood = type === "lv";
+    food.hidden = !needsFood;
+    if (byo) byo.hidden = id !== "fashion-show";
+    var ready = type && (!needsFood || f);
+    sets.forEach(function (s) { s.hidden = !(ready && s.getAttribute("data-set") === type); });
+    root.classList.toggle("pfood-games", needsFood && f === "games");
+    root.classList.toggle("pfood-yes", needsFood && f === "food");
+
+    if (!type) { step.textContent = "2"; status.textContent = "Pick your arcade to see its packages."; sub.textContent = ""; return; }
+    step.textContent = needsFood ? "3" : "2";
+    if (!ready) { status.textContent = "Choose a food option to see packages."; sub.textContent = ""; return; }
+    status.textContent = "Choose your package";
+    sub.textContent = storeName(id) + (needsFood ? (f === "food" ? " · with pizza and drinks" : " · games only") : " · all about the games");
+
+    root.querySelectorAll('.pkg-set[data-set="lv"] [data-base]').forEach(function (p) {
+      p.textContent = f === "food" ? p.getAttribute("data-withfood") : p.getAttribute("data-base");
+    });
+    var links = BOOKING[id] || {};
+    var suffix = needsFood && f === "food" ? "-food" : "";
+    root.querySelectorAll('.pkg-set[data-set="' + type + '"] [data-pkg]').forEach(function (card) {
       var a = card.querySelector("[data-book]"); if (!a) return;
       var url = links[card.getAttribute("data-pkg") + suffix];
       if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
       else { a.href = "#eventsForm"; a.removeAttribute("target"); a.removeAttribute("rel"); }
     });
+    if (scroll && window.innerWidth < 760) {
+      document.getElementById("plocStatus").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    }
   }
-  function applyFood() {
-    var g = games();
-    root.classList.toggle("pfood-games", g);
-    root.querySelectorAll("[data-food]").forEach(function (p) {
-      p.textContent = g ? p.getAttribute("data-games") : p.getAttribute("data-food");
+
+  root.querySelectorAll('input[name="partyLoc"]').forEach(function (r) {
+    r.addEventListener("change", function () {
+      if (loc && root.querySelector('input[name="partyLoc"][value="' + loc + '"]').getAttribute("data-type") !== r.getAttribute("data-type")) {
+        root.querySelectorAll('input[name="partyFood"]').forEach(function (x) { x.checked = false; });
+      }
+      loc = r.value;
+      try { localStorage.setItem("fcaPartyLoc", r.value); } catch (e) {}
+      render(false);
+      if (window.innerWidth < 760) (r.getAttribute("data-type") === "lv" ? food : document.getElementById("plocStatus")).scrollIntoView({ behavior: "smooth", block: "start" });
     });
-    applyLinks();
-  }
-  root.querySelectorAll('input[name="partyFood"]').forEach(function (r) { r.addEventListener("change", applyFood); });
-  var radios = root.querySelectorAll('input[name="partyLoc"]');
-  var sets = root.querySelectorAll(".pkg-set");
-  var status = root.querySelector("[data-status]");
-  var sub = root.querySelector("[data-status-sub]");
-  root.classList.add("ploc-on");
+  });
+  root.querySelectorAll('input[name="partyFood"]').forEach(function (r) { r.addEventListener("change", function () { render(true); }); });
 
-  function choose(id, remember) {
-    var input = root.querySelector('input[name="partyLoc"][value="' + id + '"]');
-    if (!input || input.disabled) return false;
-    input.checked = true;
-    var type = input.getAttribute("data-type");
-    var name = input.parentNode.querySelector("span").firstChild.textContent.trim();
-    root.classList.add("ploc-picked");
-    sets.forEach(function (s) { s.inert = false; });
-    sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== type; });
-    root.classList.toggle("ploc-room", type === "room");
-    root.querySelector("[data-step]").textContent = type === "room" ? "3" : "2";
-    status.textContent = "Choose your package";
-    sub.textContent = name + " · " + (type === "room" ? "Party Area with tables and seating" : "Arcade Party, all about the games");
-    current = { id: id, type: type };
-    applyLinks();
-    if (remember) { try { localStorage.setItem("fcaPartyLoc", id); } catch (e) {} }
-    return true;
-  }
-
-  // Before a pick: show the Party Area set dimmed as a preview.
-  sets.forEach(function (s) { s.hidden = s.getAttribute("data-set") !== "room"; s.inert = true; });
-  radios.forEach(function (r) { r.addEventListener("change", function () {
-    choose(r.value, true);
-    if (window.innerWidth < 760) (r.getAttribute("data-type") === "room" ? root.querySelector(".pfood") : document.getElementById("plocStatus")).scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-  }); });
-
-  applyFood();
   var q = new URLSearchParams(location.search).get("location");
   var saved = null; try { saved = localStorage.getItem("fcaPartyLoc"); } catch (e) {}
-  if (!(q && choose(q, true)) && saved) choose(saved, false);
+  var start = q || saved;
+  var s = start && root.querySelector('input[name="partyLoc"][value="' + start + '"]');
+  if (s && !s.disabled) { s.checked = true; loc = start; }
+  render(false);
 })();
