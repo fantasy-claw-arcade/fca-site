@@ -37,7 +37,9 @@
     var input = id && root.querySelector('input[name="partyLoc"][value="' + id + '"]');
     var type = input ? input.getAttribute("data-type") : null;
     var f = picked("partyFood");
-    var needsFood = type === "lv";
+    var needsFood = !!input && input.getAttribute("data-food") === "yes";
+    var nofood = root.querySelector("[data-nofood]");
+    if (nofood) nofood.textContent = id === "fashion-show" ? "No, we’ll bring our own or skip food" : "No, games only";
     food.hidden = !needsFood;
     if (byo) byo.hidden = id !== "fashion-show";
     var ready = type && (!needsFood || f);
@@ -49,10 +51,10 @@
     step.textContent = needsFood ? "3" : "2";
     if (!ready) { status.textContent = "Choose a food option to see packages."; sub.textContent = ""; return; }
     status.textContent = "Choose your package";
-    sub.textContent = storeName(id) + (needsFood ? (f === "food" ? " · with pizza and drinks" : " · games only") : " · all about the games");
+    sub.textContent = storeName(id) + (needsFood ? (f === "food" ? " · with pizza and drinks" : (id === "fashion-show" ? " · no food from us" : " · games only")) : (id === "area15" ? " · games only (no outside food or drink)" : " · all about the games"));
 
     root.querySelectorAll('.pkg-set[data-set="lv"] [data-base]').forEach(function (p) {
-      p.textContent = f === "food" ? p.getAttribute("data-withfood") : p.getAttribute("data-base");
+      p.textContent = needsFood && f === "food" ? p.getAttribute("data-withfood") : p.getAttribute("data-base");
     });
     var links = BOOKING[id] || {};
     var suffix = needsFood && f === "food" ? "-food" : "";
@@ -69,13 +71,13 @@
 
   root.querySelectorAll('input[name="partyLoc"]').forEach(function (r) {
     r.addEventListener("change", function () {
-      if (loc && root.querySelector('input[name="partyLoc"][value="' + loc + '"]').getAttribute("data-type") !== r.getAttribute("data-type")) {
+      if (loc && loc !== r.value) {
         root.querySelectorAll('input[name="partyFood"]').forEach(function (x) { x.checked = false; });
       }
       loc = r.value;
       try { localStorage.setItem("fcaPartyLoc", r.value); } catch (e) {}
       render(false);
-      if (window.innerWidth < 760) (r.getAttribute("data-type") === "lv" ? food : document.getElementById("plocStatus")).scrollIntoView({ behavior: "smooth", block: "start" });
+      if (window.innerWidth < 760) (r.getAttribute("data-food") === "yes" ? food : document.getElementById("plocStatus")).scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
   root.querySelectorAll('input[name="partyFood"]').forEach(function (r) { r.addEventListener("change", function () { render(true); }); });
