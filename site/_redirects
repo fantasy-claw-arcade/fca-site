@@ -1,5 +1,35 @@
-# Old Wix URLs → new pages (301 = permanent)
-/franchising-old    /franchising    301
+# Old Wix URLs → new pages (301 = permanent). First match wins, so specific rules go above wildcards.
+# Built from the Search Console exports (Nov 5, 2026).
+
+# Store pages
+/lasvegas-galleriamall    /locations    301
+
+# Posts not migrated (redirect to the closest page)
+/post/fantasy-claw-arcade-goes-national-viral-las-vegas-phenomenon-launches-franchise-program-targeting    /franchising    301
+/post/fantasy-claw-arcade-seeks-major-metro-growth-after-launching-franchise-system    /franchising    301
+/post/fantasy-claw-arcade-arrives-in-hawai%CA%BBi-third-location-now-open-in-waik%C4%AByk%C4%AB-in-the-famous-internatio    /honolulu-internationalmarketplace    301
+/post/fantasy-claw-arcade-arrives-in-hawaiʻi-third-location-now-open-in-waikīkī-in-the-famous-internatio    /honolulu-internationalmarketplace    301
+/post/elliot-fantasyclawarcade-com    /press-and-news    301
+/post/serena-neel-x-fantasy-claw-arcade-play-her-machines-in-las-vigas    /post/serena-neel-x-fantasy-claw-arcade-play-her-machines-in-las-vegas    301
+/post/serena-neel-x-fantasy-laser-arcade-play-her-machines-in-las-vegas    /post/serena-neel-x-fantasy-claw-arcade-play-her-machines-in-las-vegas    301
+
+# Events
+/event-details/fca-easton-grand-opening    /columbus-easton    301
 /event-details/*    /franchising    301
+/events    /birthdaysevents    301
+
+# Franchising
+/franchising-old    /franchising    301
+/franchising-opt-in    /franchising    301
+
+# Press, blog and listings
 /press-and-news/page/*    /press-and-news    301
+/press-and-news/categories/blog    /blog    301
+/press-and-news/categories/*    /press-and-news    301
 /blog/page/*    /blog    301
+/pnold    /press-and-news    301
+
+# Old Wix utility pages
+/copy-of-terms-and-conditions    /terms-and-conditions    301
+/blank    /    301
+/profile/*    /    301
