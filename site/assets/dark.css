@@ -746,3 +746,4 @@
 .member-note { margin-top: 32px; padding: 24px 26px; border-radius: 18px; background: rgba(222,11,131,.14); border: 1px solid rgba(222,11,131,.5); max-width: 760px; }
 .member-note h2 { font-size: 1.4rem; margin: 0 0 8px; color: #fff; }
 .member-note p { margin: 0; color: #fff; }
+.earn-now { margin-top: 18px; padding: 12px 16px; border-left: 3px solid var(--pink); background: rgba(255,255,255,.05); border-radius: 0 10px 10px 0; color: #fff; max-width: 62ch; }
