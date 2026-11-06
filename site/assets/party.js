@@ -16,7 +16,7 @@
   };
   var SUB = {
     "fashion-show": " · add pizza and drinks when you book, or bring your own",
-    "area15": " · games only (no outside food or drink)",
+    "area15": " · food available through AREA15",
     "miracle-mile": " · games only"
   };
 
@@ -39,6 +39,7 @@
     var type = input ? input.getAttribute("data-type") : null;
     sets.forEach(function (s) { s.hidden = !(type && s.getAttribute("data-set") === type); });
     root.classList.toggle("pfood-yes", !!input && input.getAttribute("data-addon") === "food");
+    root.querySelectorAll("[data-note]").forEach(function (n) { n.hidden = n.getAttribute("data-note") !== id; });
     step.textContent = "2";
     if (!type) { status.textContent = "Pick your arcade to see its packages."; sub.textContent = ""; return; }
     status.textContent = "Choose your package";
