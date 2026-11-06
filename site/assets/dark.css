@@ -735,3 +735,14 @@
 /* Package names: always two lines (name, then "Party") so every card lines up */
 #packages .pkg h3 { min-height: 0; white-space: nowrap; }
 @media (max-width: 380px) { #packages .pkg h3 { white-space: normal; } }
+/* Loyalty: app coming soon */
+.app-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.app-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,.35); color: #fff; opacity: .75; cursor: default; }
+.app-badge > span { display: flex; flex-direction: column; font-weight: 800; font-size: 1.05rem; line-height: 1.1; }
+.app-badge small { font-weight: 600; font-size: .7rem; letter-spacing: .02em; }
+.app-follow { margin-top: 14px; color: #fff; } .app-follow a { color: #fff; font-weight: 700; }
+.loyal-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
+@media (max-width: 720px) { .loyal-tiles { grid-template-columns: 1fr; } }
+.member-note { margin-top: 32px; padding: 24px 26px; border-radius: 18px; background: rgba(222,11,131,.14); border: 1px solid rgba(222,11,131,.5); max-width: 760px; }
+.member-note h2 { font-size: 1.4rem; margin: 0 0 8px; color: #fff; }
+.member-note p { margin: 0; color: #fff; }
