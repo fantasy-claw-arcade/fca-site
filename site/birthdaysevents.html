@@ -56,20 +56,12 @@
     <section class="band" id="packages" aria-labelledby="pkgTitle">
     <div class="wrap">
       <div class="section-head"><h2 id="pkgTitle">Party <span class="accent">Packages</span></h2></div>
-      <p class="pkg-intro">Packages and pricing depend on the arcade. Pick your arcade and your food option to see what’s included.</p>
+      <p class="pkg-intro">Packages and pricing depend on the arcade. Pick your arcade to see what’s included.</p>
       <fieldset class="ploc" id="partyLoc">
         <legend><span class="ploc-step">1</span>Where’s the party?</legend>
-        <div class="ploc-city"><p class="ploc-cityname">Las Vegas</p><div class="ploc-chips"><label class="ploc-chip"><input type="radio" name="partyLoc" value="fashion-show" data-type="lv" data-food="yes"><span>Fashion Show Mall<small>Private party area</small></span></label><label class="ploc-chip"><input type="radio" name="partyLoc" value="area15" data-type="lv"><span>AREA15</span></label><label class="ploc-chip"><input type="radio" name="partyLoc" value="miracle-mile" data-type="lv"><span>Miracle Mile Shops</span></label></div></div>
+        <div class="ploc-city"><p class="ploc-cityname">Las Vegas</p><div class="ploc-chips"><label class="ploc-chip"><input type="radio" name="partyLoc" value="fashion-show" data-type="lv" data-addon="food"><span>Fashion Show Mall<small>Private party area</small></span></label><label class="ploc-chip"><input type="radio" name="partyLoc" value="area15" data-type="lv"><span>AREA15</span></label><label class="ploc-chip"><input type="radio" name="partyLoc" value="miracle-mile" data-type="lv"><span>Miracle Mile Shops</span></label></div></div>
         <div class="ploc-city"><p class="ploc-cityname">Honolulu</p><div class="ploc-chips"><label class="ploc-chip"><input type="radio" name="partyLoc" value="international-market-place" data-type="arcade"><span>International Market Place</span></label><label class="ploc-chip"><input type="radio" name="partyLoc" value="ala-moana" data-type="arcade" disabled><span>Ala Moana Center<small>Opening December</small></span></label></div></div>
         <div class="ploc-city"><p class="ploc-cityname">Columbus</p><div class="ploc-chips"><label class="ploc-chip"><input type="radio" name="partyLoc" value="easton" data-type="arcade"><span>Easton Town Center</span></label></div></div>
-      </fieldset>
-      <fieldset class="pfood" id="partyFood">
-        <legend class="pfood-label"><span class="ploc-step">2</span>Add pizza and drinks?</legend>
-        <div class="pfood-opts">
-          <label class="pfood-opt"><input type="radio" name="partyFood" value="food"><span>Yes, add pizza &amp; drinks <small>+$79 to $129</small></span></label>
-          <label class="pfood-opt"><input type="radio" name="partyFood" value="games"><span data-nofood>No, games only</span></label>
-        </div>
-        <p class="pfood-note" data-byo hidden>At Fashion Show Mall, you’re welcome to bring your own food instead.</p>
       </fieldset>
       <div class="ploc-status" id="plocStatus" aria-live="polite"><span class="ploc-step" data-step>2</span><p><span data-status>Pick your arcade to see its packages.</span><small data-status-sub></small></p></div>
       <div class="pkg-set" data-set="lv">
@@ -77,26 +69,23 @@
         <div class="pkgs">
           <article class="pkg" data-pkg="fantasy-claw">
             <h3>Fantasy Claw<br><span class="pkg-h-sub">Party</span></h3>
-            <p class="pkg-price"><span data-base="$399" data-withfood="$478">$399</span></p>
-            <p class="pkg-addon" data-addon>Includes $79 pizza &amp; drinks package</p>
+            <p class="pkg-price"><span>$399</span></p>
             <p class="pkg-kids">Up to 10 guests · 2 hours</p>
-            <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>2-hour party with a dedicated Party Host</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>25 tokens per guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Special birthday gift for the birthday guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Bottled water for every guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>15% off additional tokens during the party</span></li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Pizza &amp; drinks:</b> 3 large pizzas (cheese or pepperoni), a soda or Capri Sun per guest, plates and napkins</span></li></ul>
+            <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>2-hour party with a dedicated Party Host</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>25 tokens per guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Special birthday gift for the birthday guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Bottled water for every guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>15% off additional tokens during the party</span></li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Add pizza &amp; drinks, +$79:</b> 3 large pizzas (cheese or pepperoni), a soda or Capri Sun per guest, plates and napkins. Choose it when you book.</span></li></ul>
             <a class="btn" href="#eventsForm" data-book>Book this package</a>
           </article>
           <article class="pkg" data-pkg="wizards-challenge">
             <h3>Wizard’s Challenge<br><span class="pkg-h-sub">Party</span></h3>
-            <p class="pkg-price"><span data-base="$599" data-withfood="$698">$599</span></p>
-            <p class="pkg-addon" data-addon>Includes $99 pizza &amp; drinks package</p>
+            <p class="pkg-price"><span>$599</span></p>
             <p class="pkg-kids">Up to 15 guests · 2 hours</p>
-            <ul><li class="pkg-plus"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Everything in the Fantasy Claw Party, plus:</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Wizard’s Quest scavenger hunt</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Claw Magic Tournament: compete for the champion title</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Special prize for the tournament champion</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>35 tokens per guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>15% off additional tokens during the party</span></li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Pizza &amp; drinks:</b> 4 large pizzas (cheese or pepperoni), a soda or Capri Sun per guest, plates and napkins</span></li></ul>
+            <ul><li class="pkg-plus"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Everything in the Fantasy Claw Party, plus:</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Wizard’s Quest scavenger hunt</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Claw Magic Tournament: compete for the champion title</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Special prize for the tournament champion</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>35 tokens per guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>15% off additional tokens during the party</span></li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Add pizza &amp; drinks, +$99:</b> 4 large pizzas (cheese or pepperoni), a soda or Capri Sun per guest, plates and napkins. Choose it when you book.</span></li></ul>
             <a class="btn" href="#eventsForm" data-book>Book this package</a>
           </article>
           <article class="pkg" data-pkg="ultimate-wizard">
             <h3>Ultimate Wizard<br><span class="pkg-h-sub">Party</span></h3>
-            <p class="pkg-price"><span data-base="$799" data-withfood="$928">$799</span></p>
-            <p class="pkg-addon" data-addon>Includes $129 pizza &amp; drinks package</p>
+            <p class="pkg-price"><span>$799</span></p>
             <p class="pkg-kids">Up to 20 guests · 2 hours</p>
-            <ul><li class="pkg-plus"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Everything in the Wizard’s Challenge Party, plus:</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Plush Spell Challenge: win the most plushies in a timed event</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Special prizes for the tournament champion and plush challenge winner</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>45 tokens per guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Premium birthday gift for the birthday guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>20% off additional tokens during the party</span></li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Pizza &amp; drinks:</b> 5 large pizzas (cheese or pepperoni), a soda or Capri Sun per guest, plates and napkins</span></li></ul>
+            <ul><li class="pkg-plus"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Everything in the Wizard’s Challenge Party, plus:</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Plush Spell Challenge: win the most plushies in a timed event</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Special prizes for the tournament champion and plush challenge winner</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>45 tokens per guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Premium birthday gift for the birthday guest</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>20% off additional tokens during the party</span></li><li class="pkg-food"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Add pizza &amp; drinks, +$129:</b> 5 large pizzas (cheese or pepperoni), a soda or Capri Sun per guest, plates and napkins. Choose it when you book.</span></li></ul>
             <a class="btn" href="#eventsForm" data-book>Book this package</a>
           </article>
           <article class="pkg pkg-custom" data-pkg="custom">
@@ -141,7 +130,7 @@
           </article>
         </div>
       </div>
-      <p class="how-note pkg-note">A 50% deposit holds your date. You’ll pick your date and time when you book. Please tell us about any food allergies.</p>
+      <p class="how-note pkg-note">Book at least 3 days ahead. A 50% deposit holds your date, and you’ll pick your date and time when you book. Please tell us about any food allergies.</p>
     </div>
   </section>
   <section>
