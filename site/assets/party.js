@@ -6,8 +6,10 @@
   var LV = { "fantasy-claw": "", "wizards-challenge": "", "ultimate-wizard": "",
              "fantasy-claw-food": "", "wizards-challenge-food": "", "ultimate-wizard-food": "" };
   var AR = { "fantasy-claw": "", "wizards-challenge": "", "ultimate-wizard": "" };
+  var FS_URL = "https://app.squareup.com/appointments/book/xjld35tkodu5ho/LJACZK22D8AD7/start";
   var BOOKING = {
-    "fashion-show": Object.assign({}, LV),
+    "fashion-show": { "fantasy-claw": FS_URL, "wizards-challenge": FS_URL, "ultimate-wizard": FS_URL,
+                      "fantasy-claw-food": FS_URL, "wizards-challenge-food": FS_URL, "ultimate-wizard-food": FS_URL },
     "area15": Object.assign({}, LV),
     "miracle-mile": Object.assign({}, LV),
     "international-market-place": Object.assign({}, AR),
