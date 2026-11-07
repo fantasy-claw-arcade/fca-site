@@ -5,11 +5,12 @@
 (function () {
   var FS_URL = "https://app.squareup.com/appointments/book/xjld35tkodu5ho/LJACZK22D8AD7/start";
   var MM_URL = "https://app.squareup.com/appointments/book/qc789couihszx4/LVY1F82PQ830Y/start";
+  var A15_URL = "https://app.squareup.com/appointments/book/cwi65e177j64ri/L1V7PMMRM898X/start";
   var PKGS = ["fantasy-claw", "wizards-challenge", "ultimate-wizard"];
   function all(url) { var o = {}; PKGS.forEach(function (k) { o[k] = url; }); return o; }
   var BOOKING = {
     "fashion-show": all(FS_URL),
-    "area15": all(""),
+    "area15": all(A15_URL),
     "miracle-mile": all(MM_URL),
     "international-market-place": all(""),
     "ala-moana": all(""),
