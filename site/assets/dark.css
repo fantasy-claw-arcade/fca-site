@@ -752,3 +752,17 @@
 #packages .pkgs.pkgs-solo { grid-template-columns: minmax(0, 360px); }
 @media (max-width: 620px) { #packages .pkgs.pkgs-solo { grid-template-columns: 1fr; } }
 .pkg-note[hidden] { display: none; }
+/* Tournament page */
+.t-hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 20px; }
+.t-spots { font-weight: 800; color: var(--pink); letter-spacing: .02em; }
+.t-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.t-list li { display: flex; gap: 10px; align-items: flex-start; color: #fff; }
+.t-list svg { flex: none; width: 20px; height: 20px; margin-top: 2px; fill: none; stroke: var(--pink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.t-cta { margin: 6px 0 0; }
+.t-rules .promo-details { max-width: 860px; }
+.t-rules-body h3 { margin: 22px 0 6px; font-size: 1.05rem; color: #fff; }
+.t-rules-body p { margin: 0 0 8px; color: #fff; font-size: .95rem; line-height: 1.55; }
+.t-table { overflow-x: auto; }
+.t-table table { border-collapse: collapse; width: 100%; min-width: 420px; color: #fff; font-size: .93rem; }
+.t-table th, .t-table td { border: 1px solid rgba(255,255,255,.18); padding: 8px 10px; text-align: left; }
+.t-table th { background: rgba(233,30,140,.18); }

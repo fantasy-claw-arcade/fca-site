@@ -19,7 +19,7 @@
       promos.sort(function (x, y) { return x.dataset.start < y.dataset.start ? -1 : 1; }).forEach(function (el) {
         var st = el.dataset.start, en = el.dataset.end, lab = el.querySelector("[data-promo-label]");
         if (en < today) { el.hidden = true; return; }
-        if (st <= today && !shownCurrent) { shownCurrent = true; return; }
+        if (st <= today) { shownCurrent = true; return; }
         if (st > today && !shownNext) {
           shownNext = true; el.classList.add("upcoming");
           var d = new Date(st + "T12:00:00");
