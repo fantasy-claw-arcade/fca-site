@@ -766,3 +766,13 @@
 .t-table table { border-collapse: collapse; width: 100%; min-width: 420px; color: #fff; font-size: .93rem; }
 .t-table th, .t-table td { border: 1px solid rgba(255,255,255,.18); padding: 8px 10px; text-align: left; }
 .t-table th { background: rgba(233,30,140,.18); }
+/* Store Instagram call-out (location pages) */
+.ig-cta { display: inline-flex; align-items: center; gap: 14px; margin-top: 18px; padding: 10px 20px 10px 10px; border-radius: 16px; background: #fff; color: #111; text-decoration: none; box-shadow: 0 6px 24px rgba(233,30,140,.35); transition: transform .15s ease, box-shadow .15s ease; max-width: 100%; }
+.ig-cta:hover, .ig-cta:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(233,30,140,.5); }
+.ig-cta:focus-visible { outline: 3px solid #E91E8C; outline-offset: 3px; }
+.ig-cta-icon { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.ig-cta-icon svg { width: 28px; height: 28px; fill: #fff; }
+.ig-cta-text { display: grid; line-height: 1.25; min-width: 0; }
+.ig-cta-text b { font-size: 1.05rem; font-weight: 800; }
+.ig-cta-text small { font-size: .9rem; color: #555; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) { .ig-cta, .ig-cta:hover { transition: none; transform: none; } }
