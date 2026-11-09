@@ -90,7 +90,8 @@
 
 .xh-inner { position: relative; z-index: 1; }
 .xh h1 { margin: 0; }
-.xh h1.xh-kicker { margin-bottom: 18px; }
+.xh h1.xh-kicker { margin-bottom: 18px; max-width: none; }
+.nowrap { white-space: nowrap; }
 .xh-kicker { display: block; max-width: 34ch; font: 700 clamp(.95rem, 1.3vw, 1.1rem)/1.35 var(--body); letter-spacing: .01em; color: #fff; margin-bottom: 18px; }
 .xh-big { display: block; margin: 0; font-family: var(--headline); font-weight: 900; letter-spacing: -.045em; line-height: .9; font-size: clamp(3.6rem, 12vw, 10.5rem); text-shadow: 0 10px 60px rgba(0,0,0,.4); }
 .xh-big .w { display: inline-block; }
