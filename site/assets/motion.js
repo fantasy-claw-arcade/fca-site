@@ -30,13 +30,20 @@
       steps.forEach(function (s) { s.classList.toggle("on", s.getAttribute("data-step") === String(n)); });
     };
     setStep(1);
-    if (io) {
-      var so = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) setStep(e.target.getAttribute("data-step")); });
-      }, { rootMargin: "-45% 0px -45% 0px" });
-      steps.forEach(function (s) { so.observe(s); });
-    }
-    steps.forEach(function (s) { s.addEventListener("mouseenter", function () { setStep(s.getAttribute("data-step")); }); });
+    // Give each step an equal share of the scroll through this section (same going down or up).
+    var zone = document.querySelector(".xhow-grid") || steps[0].parentNode;
+    var current = 1, ticking = false;
+    var update = function () {
+      ticking = false;
+      var r = zone.getBoundingClientRect(), mid = window.innerHeight * 0.5;
+      var p = (mid - r.top) / Math.max(r.height, 1);
+      var n = Math.min(steps.length, Math.max(1, Math.floor(p * steps.length) + 1));
+      if (n !== current) { current = n; setStep(n); }
+    };
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+    steps.forEach(function (s) { s.addEventListener("mouseenter", function () { current = +s.getAttribute("data-step"); setStep(current); }); });
   }
 
   // Count-up numbers
