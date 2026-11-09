@@ -465,7 +465,7 @@
 .theme-dark .formcard, .theme-dark #eventsForm, .theme-dark .form-band .formcard { background: #fff !important; color: #332C2B; border: 0 !important; box-shadow: 0 24px 60px rgba(0,0,0,.45) !important; border-radius: 22px !important; }
 .theme-dark .formcard h2, .theme-dark .formcard h3, .theme-dark .formcard p, .theme-dark .formcard label { color: #332C2B; }
 .theme-dark .fr-drawer { background: #fff; color: #332C2B; }
-.theme-dark .fr-drawer h2, .theme-dark .fr-drawer p { color: #332C2B; }
+.theme-dark .fr-drawer h2, .theme-dark .fr-drawer .drawer-title, .theme-dark .fr-drawer p { color: #332C2B; }
 .theme-dark .drawer-close { background: #fff; color: #332C2B; }
 .theme-dark .search-box { color: #332C2B; } .theme-dark .search-box h2 { color: #332C2B; }
 

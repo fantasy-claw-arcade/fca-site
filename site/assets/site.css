@@ -656,7 +656,7 @@ footer .footer-legal a { color: var(--muted); }
 .drawer-open .fr-drawer { transform: none; }
 .drawer-open { overflow: hidden; }
 .drawer-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
-.drawer-head h2 { font-family: var(--headline); font-weight: 800; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.01em; }
+.drawer-head h2, .drawer-head .drawer-title { font-family: var(--headline); font-weight: 800; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.01em; }
 .drawer-close { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--edge); background: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
 .drawer-sub { color: var(--muted); }
 .fr-drawer .hs-form-frame { margin-inline: -8px; }
@@ -800,7 +800,7 @@ footer .footer-legal { padding-block: 14px 18px; }
 .search-modal[hidden] { display: none; }
 .search-box { width: min(720px, 100%); max-height: calc(100vh - 100px); overflow-y: auto; background: #fff; border: 2.5px solid var(--edge); border-radius: 18px; box-shadow: 8px 8px 0 var(--pink); padding: 20px 22px 24px; }
 .search-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-.search-head h2 { font-family: var(--headline); font-weight: 800; font-size: 1.5rem; }
+.search-head h2, .search-head .drawer-title { font-family: var(--headline); font-weight: 800; font-size: 1.5rem; }
 #siteSearch { --pagefind-ui-primary: #DE0B83; --pagefind-ui-text: #332C2B; --pagefind-ui-border: #332C2B; --pagefind-ui-border-width: 2px; --pagefind-ui-border-radius: 12px; --pagefind-ui-font: var(--body); }
 @media (max-width: 560px) { .search-modal { padding-top: 16px; } }
 @media (min-width: 1101px) { .site-head .logo { order: 0; } .nav { order: 1; } .search-btn { order: 2; } .hdr-cta { order: 3; } }
@@ -890,3 +890,6 @@ footer .footer-legal { padding-block: 14px 18px; }
 .pkg-save { display: block; font-size: .82rem; font-weight: 700; color: var(--pink-ink); }
 #contactForm .hs-form-frame { width: auto; min-width: 0; margin-inline: -16px; }
 #pitchForm .hs-form-frame { width: auto; min-width: 0; margin-inline: -16px; }
+
+/* Drawer titles are styled like headings but aren't headings (they repeat on every page). */
+.drawer-title { font-family: var(--display); font-weight: var(--display-weight); font-stretch: var(--display-stretch); letter-spacing: var(--display-tracking); line-height: 1.05; text-wrap: balance; margin: 0; }
