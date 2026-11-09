@@ -90,8 +90,9 @@
 
 .xh-inner { position: relative; z-index: 1; }
 .xh h1 { margin: 0; }
+.xh h1.xh-kicker { margin-bottom: 18px; }
 .xh-kicker { display: block; max-width: 34ch; font: 700 clamp(.95rem, 1.3vw, 1.1rem)/1.35 var(--body); letter-spacing: .01em; color: #fff; margin-bottom: 18px; }
-.xh-big { display: block; font-family: var(--headline); font-weight: 900; letter-spacing: -.045em; line-height: .9; font-size: clamp(3.6rem, 12vw, 10.5rem); text-shadow: 0 10px 60px rgba(0,0,0,.4); }
+.xh-big { display: block; margin: 0; font-family: var(--headline); font-weight: 900; letter-spacing: -.045em; line-height: .9; font-size: clamp(3.6rem, 12vw, 10.5rem); text-shadow: 0 10px 60px rgba(0,0,0,.4); }
 .xh-big .w { display: inline-block; }
 .js .xh-big .w { opacity: 0; transform: translateY(.5em) rotate(4deg); animation: word-in .9s cubic-bezier(.2,.8,.2,1) forwards; }
 .js .xh-big .w:nth-child(2) { animation-delay: .15s; } .js .xh-big .w:nth-child(3) { animation-delay: .3s; }
