@@ -778,3 +778,7 @@
 .ig-cta-text b { font-size: 1.05rem; font-weight: 800; }
 .ig-cta-text small { font-size: .9rem; color: #555; overflow-wrap: anywhere; }
 @media (prefers-reduced-motion: reduce) { .ig-cta, .ig-cta:hover { transition: none; transform: none; } }
+/* Holiday hours box (location pages) */
+.holiday-hours { margin-top: 24px; padding: 16px 18px; border: 1px solid rgba(233,30,140,.45); border-radius: 14px; background: rgba(233,30,140,.08); }
+.holiday-hours h3 { margin: 0 0 8px; font-size: 1.1rem; color: #fff; }
+.holiday-hours[hidden], .holiday-hours tr[hidden] { display: none; }

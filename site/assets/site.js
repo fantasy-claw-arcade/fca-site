@@ -1,12 +1,31 @@
 /* Fantasy Claw Arcade site scripts: today's hours, monthly promotions, franchise quick button, video player, preview forms. */
 (function () {
   // Today's hours in each store's own time zone
-  var HOURS = {"fashionshow": {"tz": "America/Los_Angeles", "h": {"Sun": ["10am", "7pm"], "Mon": ["10am", "8pm"], "Tue": ["10am", "8pm"], "Wed": ["10am", "8pm"], "Thu": ["10am", "8pm"], "Fri": ["10am", "9pm"], "Sat": ["10am", "9pm"]}}, "area15": {"tz": "America/Los_Angeles", "h": {"Sun": ["11:30am", "10pm"], "Mon": ["11:30am", "10pm"], "Tue": ["11:30am", "10pm"], "Wed": ["11:30am", "10pm"], "Thu": ["11:30am", "10pm"], "Fri": ["11:30am", "10pm"], "Sat": ["11:30am", "10pm"]}}, "miraclemile": {"tz": "America/Los_Angeles", "h": {"Sun": ["10am", "9pm"], "Mon": ["10am", "9pm"], "Tue": ["10am", "9pm"], "Wed": ["10am", "9pm"], "Thu": ["10am", "9pm"], "Fri": ["10am", "10pm"], "Sat": ["10am", "10pm"]}}, "imp": {"tz": "Pacific/Honolulu", "h": {"Sun": ["10am", "9pm"], "Mon": ["10am", "9pm"], "Tue": ["10am", "9pm"], "Wed": ["10am", "9pm"], "Thu": ["10am", "9pm"], "Fri": ["10am", "9pm"], "Sat": ["10am", "9pm"]}}, "easton": {"tz": "America/New_York", "h": {"Sun": ["12pm", "6pm"], "Mon": ["10am", "9pm"], "Tue": ["10am", "9pm"], "Wed": ["10am", "9pm"], "Thu": ["10am", "9pm"], "Fri": ["10am", "9pm"], "Sat": ["10am", "9pm"]}}};
+  var HOURS = {"fashionshow": {"tz": "America/Los_Angeles", "h": {"Sun": ["10am", "7pm"], "Mon": ["10am", "8pm"], "Tue": ["10am", "8pm"], "Wed": ["10am", "8pm"], "Thu": ["10am", "8pm"], "Fri": ["10am", "9pm"], "Sat": ["10am", "9pm"]}}, "area15": {"tz": "America/Los_Angeles", "h": {"Sun": ["11:30am", "10pm"], "Mon": ["11:30am", "10pm"], "Tue": ["11:30am", "10pm"], "Wed": ["11:30am", "10pm"], "Thu": ["11:30am", "10pm"], "Fri": ["11:30am", "10pm"], "Sat": ["11:30am", "10pm"]}}, "miraclemile": {"tz": "America/Los_Angeles", "h": {"Sun": ["10am", "9pm"], "Mon": ["10am", "9pm"], "Tue": ["10am", "9pm"], "Wed": ["10am", "9pm"], "Thu": ["10am", "9pm"], "Fri": ["10am", "10pm"], "Sat": ["10am", "10pm"]}}, "imp": {"tz": "Pacific/Honolulu", "h": {"Sun": ["10am", "9pm"], "Mon": ["10am", "9pm"], "Tue": ["10am", "9pm"], "Wed": ["10am", "9pm"], "Thu": ["10am", "9pm"], "Fri": ["10am", "9pm"], "Sat": ["10am", "9pm"]}}, "easton": {"tz": "America/New_York", "special": {"2026-11-26": null, "2026-11-27": ["9am", "10pm"], "2026-12-12": ["9am", "10pm"], "2026-12-13": ["10am", "6pm"], "2026-12-14": ["9am", "9pm"], "2026-12-15": ["9am", "9pm"], "2026-12-16": ["9am", "9pm"], "2026-12-17": ["9am", "9pm"], "2026-12-18": ["9am", "10pm"], "2026-12-19": ["9am", "10pm"], "2026-12-20": ["10am", "8pm"], "2026-12-21": ["9am", "9pm"], "2026-12-24": ["9am", "6pm"], "2026-12-31": ["10am", "6pm"], "2027-01-01": ["12pm", "6pm"]}, "h": {"Sun": ["12pm", "6pm"], "Mon": ["10am", "9pm"], "Tue": ["10am", "9pm"], "Wed": ["10am", "9pm"], "Thu": ["10am", "9pm"], "Fri": ["10am", "9pm"], "Sat": ["10am", "9pm"]}}};
   document.querySelectorAll("[data-today]").forEach(function (el) {
     try {
       var st = HOURS[el.getAttribute("data-today")]; if (!st) return;
       var day = new Intl.DateTimeFormat("en-US", { weekday: "short", timeZone: st.tz }).format(new Date());
-      var h = st.h[day]; if (h) el.querySelector("span").textContent = "Today " + h[0] + " \u2013 " + h[1];
+      var ymd = new Intl.DateTimeFormat("en-CA", { timeZone: st.tz }).format(new Date());
+      var span = el.querySelector("span");
+      // Holiday / special hours override the regular weekly hours for that date (store's local date)
+      if (st.special && Object.prototype.hasOwnProperty.call(st.special, ymd)) {
+        var sp = st.special[ymd];
+        if (sp) span.textContent = "Today " + sp[0] + " \u2013 " + sp[1] + " (holiday hours)";
+        else { span.textContent = "Closed today"; el.classList.add("closed"); }
+        return;
+      }
+      var h = st.h[day]; if (h) span.textContent = "Today " + h[0] + " \u2013 " + h[1];
+    } catch (e) {}
+  });
+
+  // Holiday hours tables: hide rows whose last date has passed (store's local date), and the whole box once empty
+  document.querySelectorAll("[data-holiday-hours]").forEach(function (box) {
+    try {
+      var ymd = new Intl.DateTimeFormat("en-CA", { timeZone: box.getAttribute("data-tz") || "America/Los_Angeles" }).format(new Date());
+      var left = 0;
+      box.querySelectorAll("tr[data-until]").forEach(function (r) { if (r.getAttribute("data-until") < ymd) r.hidden = true; else left++; });
+      if (!left) box.hidden = true;
     } catch (e) {}
   });
 
