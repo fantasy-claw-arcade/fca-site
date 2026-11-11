@@ -785,3 +785,6 @@
 
 /* Buttons inside blog post text */
 .prose a.btn { text-decoration: none; color: #fff; }
+/* Portrait poster as a post hero: fills its frame, no letterboxing */
+.post-hero.post-hero-poster { width: fit-content; max-width: min(100%, 480px); margin-inline: auto; }
+.post-hero.post-hero-poster img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; border: 0; box-shadow: none; }
