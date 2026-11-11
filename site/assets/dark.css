@@ -761,7 +761,18 @@
 .t-list li { display: flex; gap: 10px; align-items: flex-start; color: #fff; }
 .t-list svg { flex: none; width: 20px; height: 20px; margin-top: 2px; fill: none; stroke: var(--pink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .t-cta { margin: 6px 0 0; }
-.t-rules .promo-details { max-width: 860px; }
+/* Tournament: tighter spacing between sign-up, rules and the closing CTA */
+.t-signup { padding-bottom: 24px !important; border-bottom: 0 !important; }
+.t-rules { padding-block: 8px 24px !important; border-block: 0 !important; }
+.t-rules h2 { margin: 0 0 6px; }
+.t-cta-band { padding-top: 12px !important; border-top: 0 !important; }
+.theme-dark .t-cta-band { background: var(--surface) !important; }
+.t-rules-hint { margin: 0 0 10px; color: rgba(255,255,255,.75); font-size: .9rem; }
+/* Rules in a scrollable inset window, readable without expanding */
+.t-rules-scroll { max-width: 860px; max-height: 340px; overflow-y: auto; overscroll-behavior: contain; padding: 4px 20px 16px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: var(--surface-2); scrollbar-color: var(--pink) transparent; }
+.t-rules-scroll:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+.t-rules-scroll > h3:first-child { margin-top: 14px; }
+@media (max-width: 760px) { .t-rules-scroll { max-height: 300px; padding: 2px 14px 12px; } }
 .t-rules-body h3 { margin: 22px 0 6px; font-size: 1.05rem; color: #fff; }
 .t-rules-body p { margin: 0 0 8px; color: #fff; font-size: .95rem; line-height: 1.55; }
 .t-table { overflow-x: auto; }
