@@ -14,6 +14,9 @@
 /post/serena-neel-x-fantasy-claw-arcade-play-her-machines-in-las-vigas    /post/serena-neel-x-fantasy-claw-arcade-play-her-machines-in-las-vegas    301
 /post/serena-neel-x-fantasy-laser-arcade-play-her-machines-in-las-vegas    /post/serena-neel-x-fantasy-claw-arcade-play-her-machines-in-las-vegas    301
 
+# Filled job openings (302 = temporary, in case the position reopens)
+/job-openings/arcade-attendant-planethollywood    /employment    302
+
 # Events
 /event-details/fca-easton-grand-opening    /columbus-easton    301
 /event-details/*    /franchising    301
