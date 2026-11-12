@@ -822,3 +822,5 @@
   .tbanner-actions { flex: 1 1 100%; }
   .tbanner-actions .btn { flex: 1; text-align: center; justify-content: center; }
 }
+/* Homepage hero: "Play." in brand yellow */
+.xh-big .w.yellow { color: #FDD100; }
