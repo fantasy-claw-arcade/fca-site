@@ -803,3 +803,22 @@
 .post-facts { margin: 22px 0 6px; padding: 16px 20px; border: 1px solid rgba(222,11,131,.45); border-radius: 14px; background: var(--surface-2); }
 .post-facts .post-facts-title { margin: 0 0 8px; font-family: var(--headline); font-weight: 800; color: var(--pink); }
 .post-facts ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+/* Homepage tournament banner (hides itself when registration closes) */
+.tbanner { background: #7A3B90; color: #fff; border-block: 1px solid rgba(255,255,255,.12); }
+.tbanner[hidden] { display: none; }
+.tbanner-inner { display: flex; align-items: center; gap: 18px; padding-block: 14px; }
+.tbanner-thumb { flex: none; display: block; width: 46px; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
+.tbanner-thumb img { display: block; width: 100%; height: auto; }
+.tbanner-text { margin: 0; flex: 1; line-height: 1.45; }
+.tbanner-text strong { font-family: var(--headline); font-weight: 800; }
+.tbanner-sub { color: rgba(255,255,255,.92); }
+.tbanner-actions { flex: none; display: flex; gap: 10px; }
+.tbanner .btn { padding: 10px 18px; font-size: .9rem; }
+.tbanner .btn.ghost { border-color: #fff; color: #fff; }
+@media (max-width: 760px) {
+  .tbanner-inner { flex-wrap: wrap; gap: 10px 12px; padding-block: 14px 16px; }
+  .tbanner-thumb { width: 38px; }
+  .tbanner-text { flex: 1 1 calc(100% - 50px); font-size: .95rem; }
+  .tbanner-actions { flex: 1 1 100%; }
+  .tbanner-actions .btn { flex: 1; text-align: center; justify-content: center; }
+}
