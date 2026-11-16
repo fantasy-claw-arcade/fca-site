@@ -822,5 +822,5 @@
   .tbanner-actions { flex: 1 1 100%; }
   .tbanner-actions .btn { flex: 1; text-align: center; justify-content: center; }
 }
-/* Four-step "How a party works" row on /birthdaysevents (site.css stacks .steps on smaller screens) */
-@media (min-width: 881px) { .steps.steps-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Three-step "How a party works" row on /birthdaysevents (site.css stacks .steps on smaller screens) */
+@media (min-width: 881px) { .steps.steps-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
