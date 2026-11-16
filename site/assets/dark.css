@@ -829,3 +829,10 @@
 .pt-tokens { font-weight: 700; font-size: .9rem; color: var(--pink); }
 .price-notes { font-size: .92rem; }
 @media (max-width: 560px) { .price-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* Token prices in the store page header (moved up from the body, Nov 16) */
+.loc-hero .hero-prices-title { font-size: 1.15rem; margin: 22px 0 0; }
+.loc-hero .price-grid.hero-prices { margin: 10px 0 8px; gap: 8px; }
+.loc-hero .hero-prices .price-tile { padding: 10px 4px; }
+.loc-hero .hero-prices .pt-price { font-size: 1.2rem; }
+.loc-hero .hero-prices .pt-tokens { font-size: .8rem; }
+.loc-hero .hero-price-notes { font-size: .85rem; margin: 0; max-width: 60ch; }
