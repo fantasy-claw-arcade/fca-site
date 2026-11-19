@@ -19,7 +19,8 @@
   var SUB = {
     "fashion-show": " · add pizza and drinks when you book, or bring your own",
     "area15": " · food available through AREA15",
-    "miracle-mile": " · games only"
+    "miracle-mile": " · games only",
+    "easton": " · games only · 1-hour time slots"
   };
 
   var root = document.getElementById("packages");
@@ -46,7 +47,7 @@
     if (!type) { status.textContent = "Pick your arcade to see its packages."; sub.textContent = ""; return; }
     status.textContent = type === "arcade" ? "Plan your party" : "Choose your package";
     sub.textContent = storeName(id) + (SUB[id] || " · custom parties for now");
-    var note = root.querySelector(".pkg-note"); if (note) note.hidden = type === "arcade";
+    var note = root.querySelector(".pkg-note"); if (note) note.hidden = type !== "lv";
     var links = BOOKING[id] || {};
     root.querySelectorAll('.pkg-set[data-set="' + type + '"] [data-pkg]').forEach(function (card) {
       var a = card.querySelector("[data-book]"); if (!a) return;
