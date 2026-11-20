@@ -6,6 +6,7 @@
   var FS_URL = "https://app.squareup.com/appointments/book/xjld35tkodu5ho/LJACZK22D8AD7/start";
   var MM_URL = "https://app.squareup.com/appointments/book/qc789couihszx4/LVY1F82PQ830Y/start";
   var A15_URL = "https://app.squareup.com/appointments/book/cwi65e177j64ri/L1V7PMMRM898X/start";
+  var EASTON_URL = "https://app.squareup.com/appointments/book/5jkbwa4xgjoc9p/LVKJX2NES5Q7C/start";
   var PKGS = ["fantasy-claw", "wizards-challenge", "ultimate-wizard"];
   function all(url) { var o = {}; PKGS.forEach(function (k) { o[k] = url; }); return o; }
   var BOOKING = {
@@ -14,7 +15,7 @@
     "miracle-mile": all(MM_URL),
     "international-market-place": all(""),
     "ala-moana": all(""),
-    "easton": all("")
+    "easton": { "mini-claw": EASTON_URL, "fantasy-claw-easton": EASTON_URL, "dragon-claw": EASTON_URL }
   };
   var SUB = {
     "fashion-show": " · add pizza and drinks when you book, or bring your own",
@@ -47,7 +48,7 @@
     if (!type) { status.textContent = "Pick your arcade to see its packages."; sub.textContent = ""; return; }
     status.textContent = type === "arcade" ? "Plan your party" : "Choose your package";
     sub.textContent = storeName(id) + (SUB[id] || " · custom parties for now");
-    var note = root.querySelector(".pkg-note"); if (note) note.hidden = type !== "lv";
+    var note = root.querySelector(".pkg-note"); if (note) note.hidden = type !== "lv" && type !== "easton";
     var links = BOOKING[id] || {};
     root.querySelectorAll('.pkg-set[data-set="' + type + '"] [data-pkg]').forEach(function (card) {
       var a = card.querySelector("[data-book]"); if (!a) return;
