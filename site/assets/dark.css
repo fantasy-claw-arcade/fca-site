@@ -838,3 +838,5 @@
 .loc-hero .hero-prices .pt-price { font-size: 1.2rem; }
 .loc-hero .hero-prices .pt-tokens { font-size: .8rem; }
 .loc-hero .hero-price-notes { font-size: .85rem; margin: 0; max-width: 60ch; }
+/* Easton package subtitles wrap to 2 lines at desktop widths; reserve 2 lines on every card so dividers and bullets line up (incl. Custom). */
+@media (min-width: 1101px) { #packages .pkg-set[data-set="easton"] .pkg-kids { min-height: 3.2em; } }
