@@ -20,7 +20,7 @@
     "fashion-show": " · add pizza and drinks when you book, or bring your own",
     "area15": " · food available through AREA15",
     "miracle-mile": " · games only",
-    "easton": " · games only · 1-hour time slots"
+    "easton": " · 1-hour time slots · bring your own food"
   };
 
   var root = document.getElementById("packages");
