@@ -840,3 +840,12 @@
 .loc-hero .hero-price-notes { font-size: .85rem; margin: 0; max-width: 60ch; }
 /* Easton package subtitles wrap to 2 lines at desktop widths; reserve 2 lines on every card so dividers and bullets line up (incl. Custom). */
 @media (min-width: 1101px) { #packages .pkg-set[data-set="easton"] .pkg-kids { min-height: 3.2em; } }
+/* Loyalty app live: linked badges + desktop QR */
+.app-get { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; margin-top: 26px; }
+.app-get .app-badges { margin-top: 0; }
+.app-badge-live { opacity: 1; cursor: pointer; text-decoration: none; transition: border-color .2s, background .2s; }
+.app-badge-live:hover, .app-badge-live:focus-visible { border-color: var(--pink); background: rgba(222,11,131,.12); }
+.app-qr { margin: 0; display: flex; align-items: center; gap: 14px; }
+.app-qr img { width: 132px; height: 132px; background: #fff; border-radius: 10px; padding: 6px; }
+.app-qr figcaption { color: #fff; font-weight: 600; max-width: 14ch; font-size: .95rem; }
+@media (max-width: 720px) { .app-qr { display: none; } }
