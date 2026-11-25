@@ -849,3 +849,21 @@
 .app-qr img { width: 132px; height: 132px; background: #fff; border-radius: 10px; padding: 6px; }
 .app-qr figcaption { color: #fff; font-weight: 600; max-width: 14ch; font-size: .95rem; }
 @media (max-width: 720px) { .app-qr { display: none; } }
+/* Loyalty hero: phone mock-up (app launch screen with the wizard logo). Kept upright: the logo is never angled. */
+.loyal-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 40px 56px; }
+.loyal-phone { position: relative; display: flex; justify-content: center; padding: 10px 20px; }
+.loyal-hero { overflow: hidden; }
+.loyal-phone::before { content: ""; position: absolute; inset: 6% -45%; background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(222,11,131,.6), rgba(122,59,144,.35) 50%, transparent 100%); filter: blur(24px); z-index: 0; }
+.phone { position: relative; z-index: 1; width: 260px; aspect-ratio: 9 / 19.3; background: linear-gradient(145deg, #3a3334, #141011 60%); border-radius: 46px; padding: 11px; box-shadow: 0 0 0 2px #4a4243, 0 24px 60px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.08); }
+.phone-screen { position: relative; width: 100%; height: 100%; background: #fff; border-radius: 36px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.phone-screen img { width: 66%; height: auto; }
+.phone-island { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 34%; height: 24px; background: #000; border-radius: 14px; }
+.phone-bar { position: absolute; bottom: 9px; left: 50%; transform: translateX(-50%); width: 36%; height: 5px; background: #111; border-radius: 3px; opacity: .85; }
+.phone-btn { position: absolute; width: 4px; background: #2b2526; border-radius: 2px; }
+.phone-btn-l1 { left: -4px; top: 22%; height: 42px; } .phone-btn-l2 { left: -4px; top: 32%; height: 42px; } .phone-btn-r { right: -4px; top: 26%; height: 70px; }
+@media (max-width: 880px) {
+  .loyal-hero-grid { grid-template-columns: 1fr; }
+  .loyal-phone { order: 2; }
+  .phone { width: 200px; border-radius: 38px; padding: 9px; }
+  .phone-screen { border-radius: 30px; }
+}
